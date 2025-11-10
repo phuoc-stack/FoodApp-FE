@@ -65,13 +65,15 @@ export interface OrderItem {
   listingTitle: string;
   price: number;
   quantity: number;
+  sellerId?: number;
+  sellerUsername?: string;
+  imageUrl?: string;
 }
 
 export interface CheckoutResponse {
   checkoutUrl: string;
   orderId: number;
 }
-
 
 export interface ShoppingListItem {
   id: number;
@@ -84,4 +86,49 @@ export interface ShoppingListResponse {
   items: ShoppingListItem[];
   totalItems: number;
   purchasedItems: number;
+}
+
+export interface ListingRequest {
+  title: string;
+  description: string;
+  price: number;
+  pickupStartTime: string;
+  pickupEndTime: string;
+  pickupAddress: string;
+  imageUrl?: string;
+}
+
+export interface UpdateQuantityRequest {
+  listingId: number;
+  quantity: number;
+}
+
+export interface ErrorResponse {
+  error: string;
+  message: string;
+}
+
+export interface Listing {
+  id: number;
+  title: string;
+  description: string;
+  price: number; 
+  pickupStartTime: string;
+  pickupEndTime: string;
+  pickupAddress: string;
+  imageUrl: string;
+  status: string;
+  username: string;
+}
+
+export interface Recipe {
+  recipe_name: string;
+  ingredients: string[];
+  instructions: string[];
+  cooking_time: string;
+  servings: string;
+}
+
+export interface AIRecipePageProps {
+  cartCount: number;
 }
