@@ -5,7 +5,7 @@ This frontend interacts with a Spring Boot backend running at:
 
 http://localhost:9393
 
-Backend repository github link: github.com/phuoc-stack/FoodApp
+Backend repository github link: [github.com/phuoc-stack/FoodApp](https://github.com/phuoc-stack/FoodApp)
 
 ------------------------------------------------------------------------
 
