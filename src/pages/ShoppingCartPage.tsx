@@ -375,7 +375,7 @@ const ShoppingCartPage: React.FC<ShoppingCartPageProps> = ({ cartCount, setCartC
                     <span>Total</span>
                     <span className="text-orange-500">
                       $
-                      {(parseFloat(cart.totalPrice.toString()) + 2.99).toFixed(
+                      {(parseFloat(cart.totalPrice.toString())).toFixed(
                         2
                       )}
                     </span>
