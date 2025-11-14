@@ -81,26 +81,6 @@ http://localhost:9393
 
 ------------------------------------------------------------------------
 
-## 🛣️ Routes Overview
-
-  Route                 Description
-  --------------------- ----------------------
-  `/`                   Landing page
-  `/login`              Login
-  `/register`           Register
-  `/listing/:id`        Listing detail
-  `/cart`               Shopping cart
-  `/orders`             Buyer orders
-  `/order-detail?id=`   Order detail
-  `/my-listings`        Listings seller view
-  `/create-listing`     Create listing
-  `/my-sales`           Seller dashboard
-  `/payment-success`    Stripe success
-  `/payment-failed`     Stripe failure
-  `/ai-recipe`          AI recipe generator
-
-------------------------------------------------------------------------
-
 ## ▶️ Running the Project
 
 ### 1. Install dependencies
