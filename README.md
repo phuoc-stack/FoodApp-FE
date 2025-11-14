@@ -1,73 +1,120 @@
-# React + TypeScript + Vite
+# 🍽️ Foodie -- Homemade Food Marketplace (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Foodie is a modern React-based marketplace that connects home cooks with customers looking for fresh homemade food.
+This frontend interacts with a Spring Boot backend running at:
 
-Currently, two official plugins are available:
+http://localhost:9393
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+------------------------------------------------------------------------
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 👤 Authentication
 
-## Expanding the ESLint configuration
+-   JWT-based login & registration\
+-   LocalStorage persistence\
+-   Auto-clean invalid tokens
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🍲 Food Listings
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-   Browse all listings on the landing page\
+-   Listing cards with pricing, chef name, pickup windows\
+-   Listing detail page with:
+    -   Quantity selection\
+    -   Add-to-cart\
+    -   Chef profile\
+    -   Pickup times
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🛒 Shopping Cart
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   Single-seller shopping cart\
+-   Update quantities\
+-   Remove items\
+-   Auto-expiring cart timer\
+-   Stripe Checkout integration\
+-   Success & Failed payment pages
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🧾 Orders System
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+-   Buyer order dashboard\
+-   Seller order dashboard\
+-   Order details with timeline steps\
+-   Sellers can mark orders as **Completed**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🍳 Sell on Foodie
+
+-   Create new listing:
+    -   Title, description\
+    -   Price\
+    -   Pickup time window\
+    -   Pickup address\
+    -   Image upload with preview\
+-   Manage listings (active/inactive)
+
+### 🤖 AI Recipe Generator
+
+-   Upload image of a dish\
+-   Backend uses **Google Gemini** to generate:
+    -   Recipe name\
+    -   Ingredients\
+    -   Instructions\
+-   Add ingredients to shopping list
+
+------------------------------------------------------------------------
+
+## 🧱 Tech Stack
+
+### Frontend
+
+-   **React + TypeScript**
+-   **Vite**
+-   **TailwindCSS**
+-   **React Router**
+-   **Lucide Icons**
+
+### Backend (external)
+
+-   **Spring Boot**
+-   **JWT Auth**
+-   **Stripe Checkout**
+-   **Gemini AI API**
+
+------------------------------------------------------------------------
+
+## 🛣️ Routes Overview
+
+  Route                 Description
+  --------------------- ----------------------
+  `/`                   Landing page
+  `/login`              Login
+  `/register`           Register
+  `/listing/:id`        Listing detail
+  `/cart`               Shopping cart
+  `/orders`             Buyer orders
+  `/order-detail?id=`   Order detail
+  `/my-listings`        Listings seller view
+  `/create-listing`     Create listing
+  `/my-sales`           Seller dashboard
+  `/payment-success`    Stripe success
+  `/payment-failed`     Stripe failure
+  `/ai-recipe`          AI recipe generator
+
+------------------------------------------------------------------------
+
+## ▶️ Running the Project
+
+### 1. Install dependencies
+
+    npm install
+
+### 2. Start dev server
+
+    npm run dev
+
+Runs at:
+
+    http://localhost:5173
+
+### 3. Ensure backend is running at:
+
+    http://localhost:9393
