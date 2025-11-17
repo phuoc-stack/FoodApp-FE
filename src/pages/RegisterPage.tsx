@@ -176,23 +176,7 @@ const RegisterPage: React.FC<RegisterPageProps> = () => {
             >
               {loading ? "Creating Account..." : "Create Account"}
             </button>
-
-            <div className="relative text-center mb-6">
-              <div className="absolute top-1/2 left-0 right-0 h-px bg-gray-200" />
-              <span className="relative bg-white px-4 text-gray-600 text-sm">
-                Or continue with
-              </span>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <button className="px-3 py-3 border border-gray-300 rounded-lg bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
-                Google
-              </button>
-              <button className="px-3 py-3 border border-gray-300 rounded-lg bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
-                Facebook
-              </button>
-            </div>
-
+            
             <p className="text-sm text-gray-600">
               Already have an account?{" "}
               
